@@ -28,11 +28,11 @@ After this long process with many iterations, I was able to collect a few thousa
 
 ### Overview and Analysis of the Data
 
-In the final dataset, there are 22 columns of data, however not all are needed for the model. The product name, customer name, well load, and lot number are irrelevant factors so they were dropped. Furthermore, some values needed to be adjusted since the target variable is known in the training data but will not be known during practical use, so this must be accounted for. Several other categories were dropped because they were only there as indicators for me.
+In the final dataset, there are 22 columns of data, however not all are needed for the model. The product name, customer name, weld load, and lot number are irrelevant factors so they were dropped. Furthermore, some values needed to be adjusted since the target variable is known in the training data but will not be known during practical use, so this must be accounted for. Several other categories were dropped because they were only there as indicators for me.
 
 The date was changed to represent the integer number of day of the year using excel in order to be usable for the model. Including the date accounts for ambient temperature changes throughout the year, which seasonally is significant. The string version of the date was dropped.
 
-Furthermore, the kettle that the batch is in as well as the thickener type used were given integer values as well, and the string versions of these data were also dropped; however, this was done in code using pandas after the final table was read, and the values simply replaced in each respective category.
+The kettle that the batch is in as well as the thickener type used were given integer values as well, and the string versions of these data were also dropped; however, this was done in code using pandas after the final table was read, and the values simply replaced in each respective category.
 
 The final dataset fed into the model consisted of 862 samples with 11 columns. The target variable of total base oil percentage was separated. This left the data with ten parameters to be considered:
 
@@ -60,7 +60,7 @@ The final dataset fed into the model consisted of 862 samples with 11 columns. T
 
 My first intuition was to use a ridge regression algorithm to find some linear multidimensional relationship, however, the results were very poor and quite unhelpful. Eventually, I settled on Random Forest Regression because it yielded the best results of any algorithm I tried to use. The coefficient of determination (R-squared value) averaged around 0.81, which although not great, was by far the most promising one. After around 50 trees the accuracy was unchanged by adding more trees to the forest. The implementation of the model can be found [here](final_model.ipynb).
 
-I have tested multiple past and current batches using a front-end input that I'm working on (which will remain proprietary), and the results have been very good. Almost all of the past batches have given results within 5% of the amount of oil actually added. Furthermore, out of the current batches I have tested this out on all of them have passed their consistency specifications when using the predicted amount of oil from the model.
+I have tested multiple past and current batches using a front-end input that I'm working on (which will remain proprietary), and the results have been very good. Almost all of the past batches have given results within 5% of the amount of oil actually added. Furthermore, out of the current batches I have tested this out on, all of them have passed their consistency specifications when using the predicted amount of oil from the model.
 
 ## Conclusion
 
