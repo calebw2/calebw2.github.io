@@ -58,7 +58,7 @@ The final dataset fed into the model consisted of 862 samples with 11 columns. T
 
 ## The Model
 
-My first intuition was to use a ridge regression algorithm to find some linear multidimensional relationship, however, the results were very poor and quite unhelpful. Eventually, I settled on Random Forest Regression because it yielded the best results of any algorithm I tried to use. The coefficient of determination (R-squared value) averaged around 0.81, which although not great, was by far the most promising one. After around 50 trees the accuracy was unchanged by adding more trees to the forest. The implementation of the model can be found [here](final_model.ipynb).
+My first intuition was to use a ridge regression algorithm to find some linear multidimensional relationship, however, the results were very poor and quite unhelpful. Eventually, I settled on Random Forest Regression because it yielded the best results of any algorithm I tried to use. The coefficient of determination (R-squared value) averaged around 0.81, which although not great, was by far the most promising one. After around 50 trees the accuracy was unchanged by adding more trees to the forest. The implementation of the model can be found [here](/assets/final_model.ipynb).
 
 I have tested multiple past and current batches using a front-end input that I'm working on (which will remain proprietary), and the results have been very good. Almost all of the past batches have given results within 5% of the amount of oil actually added. Furthermore, out of the current batches I have tested this out on, all of them have passed their consistency specifications when using the predicted amount of oil from the model.
 
