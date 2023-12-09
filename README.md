@@ -1,15 +1,19 @@
-**Hi class, welcome to the AOS C111/204 final project!** <img align="right" width="220" height="220" src="/assets/IMG/template_logo.png">
+# Random Forest Regression for the Manufacturing of Industrial Lubricating Grease
 
-For this project, you will be applying your skills to train a machine learning model using real-world data, then publishing a report on your own website.
 
-* To get data for your project, you could:
-  * use **your own data** from a separate research activity
-  * **scour the internet** to find something original, then preprocess it yourself - see the Module Overview on BruinLearn for some resources
-  * browse an archive of data designed for machine learning problems, such as the [UC Irvine Machine Learning Repository](https://archive.ics.uci.edu/datasets)
+For the manufacturing of lubricating grease, one of the most important specifications is the consistency of the grease. Often for the manufacturer this is a difficult task, as the outcome does not always follow a logical progression, and often much time is wasted on incremental adjustments to achieve the desired consistency. The goal of this model is to assist the manufacturer in efficiency by predicting the approximate amount of base oil needed to meet specifications.
 
-* Your report should be in the region of 2000-2500 words with three to four figures, and written in a scientific language and style. [This template page](/project.md) gives an example structure that you could use, but feel free to make it your own.
+## Overview of Manufacturing Grease
+Grease is defined as a lubricant suspended in some thickener. This thickener is most often a soap, the metallic salt of a fatty acid. There are several types of thickeners and complexing agents used for this. The general method for manufacture is as follows: 
+1.	A “base grease” is cooked in a reactor by heating base oil, dissolving a fatty acid, adding a metallic base (i.e. lithium hydroxide), and heating until the reaction is complete
+2.	The base grease is transferred to a finishing kettle where it receives its additives. The additive package is different for every grease according to its needs
+3.	The consistency is tested, and the grease is then “oiled back” by adding more base oil, causing the grease to thin out. This step is done incrementally until the desired consistency is reached.
+4.	The grease is filled into its packaging and shipped.
 
-Your website will be a great addition to your CV, and a place to host future projects too since it doubles as a GitHub repository. The first step is to set up a project website like this one by following the instructions below. 
+## The Problem
+Through this relatively simple process, one usually reaches the conclusion that more oil yields a softer grease. While this is generally true, it isn't easy to reliably estimate how much oil will end up being needed to achieve the desired consistency. Not every grease type reacts the same, and sometimes even the same grease will react differently. With much hands-on experience, the technician can sort of “get a feel” for it, but this requires a lot of commitment that is fairly unreasonable for most people in this position to put in given their compensation. As the firm grows and more people are involved this becomes even more true.
+
+
 
 ## How does this website work?
 
