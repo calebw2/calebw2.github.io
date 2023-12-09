@@ -54,6 +54,12 @@ The final dataset fed into the model consisted of 862 samples with 11 columns. T
 
 •	Rework percentage - accounts for “rework”, which refers to adding finished product that was not shipped for any number of reasons. This was at first omitted but added significant enough precision to warrant inclusion. 
 
+•	final pen - This is the value (in dmm) that results from the worked penetration test, an ASTM method for measuring the consistency of grease. A higher number indicates a softer grease.
+
 ## The Model
 
-My first intuition was to use a ridge regression algorithm to find some linear multidimensional relationship, however the 
+My first intuition was to use a ridge regression algorithm to find some linear multidimensional relationship, however the results were very poor and quite unhelpful. Eventually I settled on Random Forest Regression because it yielded the best results of any algorithm I tried to use. The coefficient of determination (R-squared value) averaged around 0.81, which although not great, was by far the most promising one. After around 50 trees the accuracy was unchanged by adding more trees to the forest. 
+
+I have tested multiple past and current batches using a front-end input that I'm working on (which will remain proprietary), and the results have been very good. Almost all of the past batches have given results within 5% of the amount of oil actually added. Furthermore, out of the current batches I have tested this out on all of them have passed their consistency specifications when using the predicted amount of oil from the model.
+
+This project has proven invaluable to me in providing real-life experience with working with machine learning. This class has enabled me to decide on the best algorithm and use it to get meaningful results. I plan on continuing to work on and refine this project in the upcoming months and fully implementing it soon. As I update the project by adding parameters or changing the algorithm I will keep it updated on this website. I also plan on using this experience to solve other problems in my career using machine learning; this is just the begining. 
