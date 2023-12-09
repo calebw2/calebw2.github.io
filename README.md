@@ -22,9 +22,9 @@ There have been several attempts between myself and my coworkers to develop line
 
 ### Acquiring the Data
 
-By far the most difficult part of this project has been sourcing and cleaning the data required to train a model. The data we have is fairly low quality given that only in recent years have we started rigorously collecting data in preparation for this type of project. Because of this, there have been many changes in formatting on the Excel sheets where we record. Also, all the data being stored in excel adds another layer in complexity, especially since I have little experience with Python. However I was eventually able to write a fairly rudimentary function that will scrape as much of our QC Analysis data as possible using openpyxl and collect it in another excel worksheet. The code for this can be found with this link. 
+By far the most difficult part of this project has been sourcing and cleaning the data required to train a model. The data we have is fairly low quality given that only in recent years have we started rigorously collecting data in preparation for this type of project. Because of this, there have been many changes in formatting on the Excel sheets where we record. Also, all the data being stored in excel adds another layer in complexity, especially since I have little experience with Python. However I was eventually able to write a fairly rudimentary function that will scrape as much of our QC Analysis data as possible using openpyxl and collect it in another Excel worksheet. The code for this can be found here, although without the QC Analysis data it cannot be run.  
 
-After this long process with many iterations, I was able to collect a few thousand batches. Some of the cleaning and filtering was beyond my knowledge of my Python capabilities, so the rest was sorted semi-manually using excel. After this even longer process I was able to collect complete data for 862 batches. Some values needed to be scaled and adjusted to be useful, and this was done mostly using excel. The final data set that was used to train and test the model can be found [here](/assets/final_matrix.csv).
+After this long process with many iterations, I was able to collect a few thousand batches. Some of the cleaning and filtering was beyond my knowledge of my Python capabilities, so the rest was sorted semi-manually using excel. After this even longer process I was able to collect complete data for 862 batches. Some values needed to be scaled and adjusted to be useful, and this was done mostly using Excel. The final data set that was used to train and test the model can be found [here](/assets/final_matrix.csv).
 
 ### Overview and Analysis of the Data
 
@@ -36,15 +36,15 @@ Furthermore, the kettle that the batch is in as well as the thickener type used 
 
 The final dataset fed into the model consisted of 862 samples with 11 columns. The target variable of total base oil percentage was separated. This left the data with ten parameters to be considered:
 
-•	date: in integer form to account for seasonal ambient temperature conditions
+•	date - in integer form to account for seasonal ambient temperature conditions
 
-•	kettle: which of the nine kettles was used to process the batch
+•	kettle - which of the nine kettles the batch was processed in
 
-•	thickener type: in integer form, accounts for how different soaps respond to oilback
+•	thickener type - in integer form, accounts for how different soaps respond to oilback
 
-•	elco complex(?):  A boolean indicating whether a certain complexing agent was used that, in my experience, makes a significant difference in oil back response
+•	elco complex(?) -  A boolean indicating whether a certain complexing agent was used that, in my experience, makes a significant difference in oilback response
 
-•	base grease percentage (pre oil)
+•	base grease percentage (pre-oil)
 
 •	liquid additives percentage (pre-oil)
 
@@ -52,8 +52,8 @@ The final dataset fed into the model consisted of 862 samples with 11 columns. T
 
 •	silica percentage (pre-oil) – silica has a much more pronounced thickening effect per percentage point than any other additive. 
 
-•	Rework percentage- accounts for “rework”, which refers to adding finished product that was not shipped for any number of reasons. This was at first omitted but added significant enough precision to warrant inclusion. 
+•	Rework percentage - accounts for “rework”, which refers to adding finished product that was not shipped for any number of reasons. This was at first omitted but added significant enough precision to warrant inclusion. 
 
 ## The Model
 
-My first intuition was to use a ridge regression algorithm to find some linear relationship
+My first intuition was to use a ridge regression algorithm to find some linear multidimensional relationship, however the 
